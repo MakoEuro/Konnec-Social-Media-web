@@ -1,0 +1,89 @@
+@import "./reset.css";
+
+:root {
+
+    /* Background */
+    --app-dark-bg: #201c22;
+    --app-dark-light-bg: #2a262d;
+    --app-light-bg: #eee;
+
+    /* Font */
+    --app-dark-font: #838383;
+    --app-dark-light-font: #878787;
+    --app-font-color: #f2f4f6;
+
+    /* General basic color */
+    --app-blue: #09f;
+    --app-green: #9f0;
+    --app-orange: #f90;
+    --app-pink: #f09;
+    --app-purple: #90f;
+}
+
+html {
+    scroll-behavior: smooth;   
+}
+    
+body {
+    background-color: var(--app-dark-bg);
+    background-size: contain;
+}
+    
+.container {
+    width: min(100% - 30px, 1280px);
+    margin-inline: auto;
+}
+
+/* - - - - - - - - - - - - - - - -
+            LOGIN PAGE
+- - - - - - - - - - - - - - - - - */ 
+
+.log {
+    max-width: 500px;
+    border-radius: 5px;
+    margin: 128px auto;
+    padding: 40px;
+    color: var(--app-dark-light-font);
+    background-color: var(--app-dark-light-bg);
+}
+
+.wrapper {
+    padding: 10px;
+}
+
+.wrapper-in {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#welcome {
+    font-size: 40px;
+}
+
+#forgot {
+    font-size: 5px;
+    color: var(--app-blue);
+}
+
+input, button {
+    padding: 12px;
+    border-radius: 2px;
+    border: 1px solid var(--app-light-bg);
+}
+
+input {
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.login {
+    background-color: var(--app-blue);
+    color: var(--app-font-color);
+    border-color: var(--app-blue);
+}
+
+.signup {
+    background-color: #fff;
+    color: var(--app-blue);
+    border-color: var(--app-blue);
+}
