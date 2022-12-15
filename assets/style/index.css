@@ -45,6 +45,12 @@ body {
     padding: 40px;
     color: var(--app-dark-light-font);
     background-color: var(--app-dark-light-bg);
+    background: url('../img/darkbg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: loadIn 1s;
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.218);
 }
 
 .wrapper {
@@ -57,12 +63,32 @@ body {
 }
 
 #welcome {
+    text-align: center;
     font-size: 40px;
+    margin-bottom: 30px;
 }
 
-#forgot {
-    font-size: 5px;
-    color: var(--app-blue);
+.incorrect {
+    height: 45px;
+    background-color: #b81a1a;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 14px;
+    color: var(--app-font-color);
+    margin-bottom: 4px;
+    text-align: center;
+    display: none;
+}
+
+h4 {
+    margin-top: 5px;
+    font-size: 14px;
+    color: rgb(97, 134, 158);
+}
+
+h4:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 input, button {
@@ -72,11 +98,15 @@ input, button {
 }
 
 input {
+    width: 380px;
     margin: 5px 0;
     display: inline-block;
 }
 
 .login {
+    font-size: 16px;
+    width: 380px;
+    margin-top: 30px;
     background-color: var(--app-blue);
     color: var(--app-font-color);
     border-color: var(--app-blue);
@@ -86,4 +116,19 @@ input {
     background-color: #fff;
     color: var(--app-blue);
     border-color: var(--app-blue);
+}
+
+/* - - - - - - - - - - - - - - - - - - -
+            ANIMATION
+- - - - - - - - - - - - - - - - - - - - */
+
+@keyframes loadIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }    
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
 }

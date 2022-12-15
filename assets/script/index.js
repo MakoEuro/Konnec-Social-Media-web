@@ -16,6 +16,8 @@ function sleep(duration) {
 }
 
 // Selectors
+const incorrect = select('.incorrect');
+
 const username = select('.username');
 const password = select('.password');
 
@@ -29,14 +31,16 @@ const credentials = {
 
 let savedCred = localStorage.setItem('credentials', JSON.stringify(credentials));
 let getCred = localStorage.getItem('credentials');
+let parsedCred = JSON.parse(getCred);
 
-
-console.log(JSON.parse(getCred));
+// console
+console.log(parsedCred);
 
 onEvent('click', login, function() {
-    if(username.value === JSON.parse(getCred[0]) && password.value === credentials.password) {
+    if(username.value === parsedCred.username && password.value === parsedCred.password) {
         window.location.href = './home.html';
     } else {
         console.log('working');
+        incorrect.style.display = 'flex';
     }
 });

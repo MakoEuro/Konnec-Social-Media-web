@@ -1,0 +1,184 @@
+@import "./reset.css";
+
+:root {
+
+    /* Background */
+    --app-dark-bg: #201c22;
+    --app-dark-light-bg: #2a262d;
+    --app-dark-light-bg2: #312d34;
+    --app-light-bg: #eee;
+
+    /* Font */
+    --app-dark-font: #838383;
+    --app-dark-light-font: #878787;
+    --app-font-color: #f2f4f6;
+
+    /* General basic color */
+    --app-blue: #09f;
+    --app-green: #9f0;
+    --app-orange: #f90;
+    --app-pink: #f09;
+    --app-purple: #90f;
+}
+
+html {
+    scroll-behavior: smooth;   
+}
+    
+body {
+    background-image: url('../img/darkbg.png');
+    background-size: contain;
+    background-size: contain;
+    position: static;
+}
+    
+.container {
+    width: min(100% - 30px, 1280px);
+    margin-inline: auto;
+}
+
+/* - - - - - - - - - - - - - -
+            HEADER
+- - - - - - - - - - - - - - - */ 
+
+.title {
+    user-select: none;
+}
+
+.title, a {
+    font-size: 24px;
+    height: 40px;
+    font-weight: 600;
+    color: #000000;
+    font-family: inherit;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+header a {
+    font-size: 24px;
+    font-weight: 300;
+    position: relative;
+    padding: 1px 0;
+}
+
+header a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+:hover::after, header a:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 1px, 0);
+}
+
+header a, .title {
+    color: #fff;
+}
+
+li {
+    display: inline;
+    overflow: auto;
+    margin-left: 20px;
+}
+
+/* Adds margin between all elements inside */
+header > * {
+    margin: 0 7vw;
+}
+
+header {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    background: var(--app-dark-bg);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    justify-content: space-between;
+}
+
+.sidebar i {
+    font-size: 24px;
+    color: #fff;
+    position: absolute;
+    margin-top: 20px;
+    display: none;
+}
+
+.user {
+    border: 1px solid #282428;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: url('../img/favicon.png');
+    background-size: contain;
+}
+
+/* - - - - - - - - - - - - - - - -
+            COLUMNS
+- - - - - - - - - - - - - - - - - */ 
+
+.column {
+    max-width: 1280px;
+    float: left;
+    margin-top: 64px;
+    padding: 30px;
+    height: 100vh;
+    border-radius: 5px;
+}
+  
+.left, .right {
+    width: 30%;
+}
+  
+.middle {
+    width: 40%;
+}
+  
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* - - - - - - - - - - - - - - - -
+            MAIN
+- - - - - - - - - - - - - - - - - */ 
+
+.userInfo > .user {
+    width: 80px;
+    height: 80px;
+}
+
+.userInfo {
+    border-radius: 2px;
+    background-color: var(--app-dark-light-bg2);
+    width: auto;
+    height: 50vh;
+    padding: 30px;
+}
+
+/* - - - - - - - - - - - - - - - - - - -
+            ANIMATION
+- - - - - - - - - - - - - - - - - - - - */
+
+@keyframes loadIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }    
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
