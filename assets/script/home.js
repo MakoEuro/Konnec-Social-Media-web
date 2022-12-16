@@ -24,7 +24,7 @@ const randomUser = select('.random-user');
 const randomInfo = select('.random-info');
 
 // Functions --------------------------
-const url = 'https://randomuser.me/api/?nat=CA&results=10&seed=same';
+const url = 'https://randomuser.me/api/?nat=CA&results=10';
 
 const options = {
     method: 'GET',

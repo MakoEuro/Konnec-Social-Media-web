@@ -133,7 +133,7 @@ header {
 .column {
     max-width: 1280px;
     float: left;
-    margin-top: 80px;
+    margin: 80px 0;
     padding: 10px;
     height: 100vh;
     border-radius: 5px;
@@ -237,6 +237,10 @@ li {
     padding: 20px;
 }
 
+.feed i {
+    cursor: pointer;
+}
+
 .post {
     margin-top: 20px;
 }
@@ -258,10 +262,15 @@ li {
     margin-top: 10px;
 }
 
+.post li {
+    margin: 10px 0 0 5px;
+    cursor: pointer;
+}
+
 textarea {
     background-color: var(--app-dark-light-bg2);
     width: 100%;
-    height: 100%;
+    height: 85%;
     resize: none;
     font-size: 20px;
     color: var(--app-font-color);
@@ -270,6 +279,17 @@ textarea {
 textarea::placeholder {
     color: var(--app-dark-font);
 }
+
+/* FONT AWESOME - ICONS */
+
+.fa-regular {
+    margin-right: 10px;
+}
+
+.fa-heart {
+    color: #d42e2e;
+}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - -
             PEOPLE YOU MIGHT KNOW
