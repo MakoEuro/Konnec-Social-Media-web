@@ -133,8 +133,8 @@ header {
 .column {
     max-width: 1280px;
     float: left;
-    margin-top: 64px;
-    padding: 30px;
+    margin-top: 80px;
+    padding: 10px;
     height: 100vh;
     border-radius: 5px;
 }
@@ -169,7 +169,6 @@ header {
     border-radius: 2px;
     background-color: var(--app-dark-light-bg2);
     width: auto;
-    height: 50vh;
     padding: 30px;
 }
 
@@ -210,19 +209,53 @@ li {
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - -
+                    USER
+- - - - - - - - - - - - - - - - - - - -  - - - */
+
+.random-user {
+    width: 100%;
+    color: var(--app-font-color);
+}
+
+.user-image {
+    border-radius: 50%;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - -
                     FEED
 - - - - - - - - - - - - - - - - - - - -  - - - */
 
-.feed, .post{
+.feed {
+    height: 200px;
+}
+
+.feed, .post {
+    color: var(--app-font-color);
     border-radius: 2px;
     background-color: var(--app-dark-light-bg2);
     width: auto;
-    height: 200px;
-    padding: 30px;
+    padding: 20px;
 }
 
 .post {
     margin-top: 20px;
+}
+
+.post .user {
+    height: 64px;
+    width: 64px;
+}
+
+.user-post {
+    display: flex;
+}
+
+.post .username {
+    margin-left: 10px;
+}
+
+.post p {
+    margin-top: 10px;
 }
 
 textarea {
@@ -246,13 +279,26 @@ textarea::placeholder {
     border-radius: 2px;
     background-color: var(--app-dark-light-bg2);
     width: auto;
-    height: 50vh;
-    padding: 30px;
+    padding: 20px;
 }
 
 .people > p {
+    margin-bottom: 10px;
     font-size: 20px;
     color: var(--app-font-color);
+}
+
+.individual {
+    display: flex;
+    border: 1px solid #3b383e;
+    border-left: none;
+    border-right: none;
+    margin: 0 -20px; /* Ignores inner margin from letting it touch the sides */
+    padding: 10px;
+}
+
+.side-info {
+    margin: 10px 10px;
 }
 
 /* - - - - - - - - - - - - - - - - - - -

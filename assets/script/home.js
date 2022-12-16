@@ -19,7 +19,9 @@ function sleep(duration) {
 const followers = select('.followers');
 const following = select('.following');
 
-const randomuser = select('.random-user');
+const randomUser = select('.random-user');
+
+const randomInfo = select('.random-info');
 
 // Functions --------------------------
 const url = 'https://randomuser.me/api/?nat=CA&results=10&seed=same';
@@ -32,15 +34,13 @@ const options = {
     mode: 'cors'
 }
 
-async function getUser() {
+async function getUsers() {
     try {
         const result = await fetch(url, options);
 
         if (result.status >= 200 && result.status < 400) {
             const data = await result.json();
             const users = data.results;
-
-            console.log(users);
             printUsers(users);
         }
     } catch(error) {
@@ -52,19 +52,28 @@ function printUsers(users) {
     users.forEach(function (inputInfo) {
         let userElement = inputInfo;
 
+        let individualUser = document.createElement('div');
+        individualUser.classList.add('individual');
+        
+        randomUser.prepend(individualUser);
+
         let userImage = document.createElement('img');
         userImage.classList.add('user-image');
-        randomuser.appendChild(userImage);
-        document.querySelector('.user-image').src = userElement.picture;
+        individualUser.appendChild(userImage);
+        document.querySelector('.user-image').src = userElement.picture.medium;
 
+        let info = document.createElement('div');
+        info.classList.add('side-info');
+        individualUser.appendChild(info);
+        
         let name = document.createElement('h3');
-        name.classList.add('content');
-        randomuser.appendChild(name);
-        name.innerText = userElement.name.first;
+        name.classList.add('name-of-user');
+        info.appendChild(name);
+        name.innerText = userElement.name.first + ' ' + userElement.name.last;
 
         let content = document.createElement('p');
-        randomuser.appendChild(content);
+        info.appendChild(content);
+        content.innerText = userElement.location.state + ', ' + userElement.location.country;
     })
 }
-
-getUser();
+getUsers();

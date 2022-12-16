@@ -25,8 +25,8 @@ const login = select('.login');
 
 // Local Storage
 const credentials = {
-    username: 'mako',
-    password: '12345'
+    username: 'makoeuro',
+    password: 'n0b0dywillguessth1s'
 };
 
 let savedCred = localStorage.setItem('credentials', JSON.stringify(credentials));
